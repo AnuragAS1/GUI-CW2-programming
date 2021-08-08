@@ -9,9 +9,9 @@ public class INGCollege implements ActionListener
     JLabel acadlabel,nonacadlabel,idlabel,coursenamelabel,durationlabel,instructorlabel,leaderlabel,levellabel,creditlabel,noalabel,nonidlabel,noncourselabel,nondurationlabel,nonprelabel,noninstructorlabel,nonleaderlabel,startdatelabel,comdatelabel,nonstartlabel,noncomlabel,nonexamlabel; 
     JTextField txtid,txtcourse,txtduration,txtnoa,txtinstructor,txtleader,txtlevel,txtcredit,txtnonid,txtnoncourse,txtnonduration,txtnonpre,txtnoninstructor,txtnonleader,txtstartdate,txtcomdate,txtnonstartdate,txtnoncomdate,txtnonexamdate;
     JButton addbtn,regbtn,displaybtn,clearbtn,nonaddbtn,nonregbtn,nondisplaybtn,nonremovebtn,nonclearbtn,nextbtn,previousbtn;
-    ArrayList<Course>al=new ArrayList();
-    AcademicCourse objAC;
-    NonAcademicCourse objNAC;
+    ArrayList<course>al=new ArrayList();
+    Academic_Course objAC;
+    Non_Academic_Course objNAC;
     
     INGCollege()
     {
@@ -274,7 +274,7 @@ public class INGCollege implements ActionListener
             String credit=txtcredit.getText();
             int assessment=Integer.parseInt(txtnoa.getText());
             
-            objAC=new AcademicCourse(courseID,course,duration,level,credit,assessment);
+            objAC=new Academic_Course(courseID,course,duration,level,credit,assessment);
             al.add(objAC);
         }
         if(e.getSource()==displaybtn)
@@ -285,10 +285,10 @@ public class INGCollege implements ActionListener
         {
             String courseID=txtnonid.getText();
             String course=txtnoncourse.getText();
-            int duration=Integer.parseInt(txtnonduration.getText());
+            int courseDuration=Integer.parseInt(txtnonduration.getText());
             String prerequisite=txtnonpre.getText();
             
-            objNAC=new NonAcademicCourse(courseID,course,duration,prerequisite);
+            objNAC=new Non_Academic_Course(courseID,course,prerequisite,courseDuration);
             al.add(objNAC);
         }
         if(e.getSource()==nondisplaybtn)
