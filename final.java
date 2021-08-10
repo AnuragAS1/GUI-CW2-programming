@@ -4,17 +4,16 @@ import java.util.*;
 import java.awt.event.*;
 public class INGCollege implements ActionListener 
 {
-    private JFrame f;
+     private JFrame f;
     private JPanel p1,p2;
-    private JLabel Title00, Title01, JcourseID, JcourseName, JcourseDuration, JLevel, JCredits, JNumberofassessments, JCourseID02, JLecturerName, JcourseLeader,JStartingDate, JCompletionDate, JcourseID01, JcourseName01, JcourseDuration01, JPrerequisite, JcourseID03, JInstructor, JcourseLeader01, JStartingDate01, JCompletionDate01, JExamDate, JcourseID04;
-    private JTextField JcourseID00, JcourseName00, JcourseDuration00, JcourseID200, JLecturerName00, JcourseLeader00, JLevel00, JCredits00, JStartingDate00, JCompletionDate00, JNumberofassessments00, JcourseID100, JcourseName100, JcourseDuration100, JPrerequisite00, JcourseID300, JInstructor00, JcourseLeader100, JStartingDate100, JCompletionDate100, JExamDate00, JCourseID400;
+    private JLabel Title00, Title01, JcourseID, JcourseName, JcourseDuration, JLevel, JCredits, JNumberofassessments, JcourseID02, JLecturerName, JcourseLeader,JStartingDate, JCompletionDate, JcourseID01, JcourseName01, JcourseDuration01, JPrerequisite, JcourseID03, JInstructor, JcourseLeader01, JStartingDate01, JCompletionDate01, JExamDate, JcourseID04;
+    private JTextField JcourseID00, JcourseName00, JcourseDuration00, JcourseID200, JLecturerName00, JcourseLeader00, JLevel00, JCredits00, JStartingDate00, JCompletionDate00, JNumberofassessments00, JcourseID100, JcourseName100, JcourseDuration100, JPrerequisite00, JcourseID300, JInstructor00, JcourseLeader100, JStartingDate100, JCompletionDate100, JExamDate00, JcourseID400;
     private JButton Add, Register, Display, Clear, NextPage, Add1, Register1, Display1, Clear1, Remove,PreviousPage;
-
-    private ArrayList<course>al=new ArrayList();
-    private Academic_Course objAC;
-    private Non_Academic_Course objNAC;
+    private ArrayList<course>AL=new ArrayList();
+    private Academic_Course AC;
+    private Non_Academic_Course NAC;
     
-    INGCollege()
+     INGCollege()
     {
         f= new JFrame("Form Registration");
         p1=new JPanel();
@@ -35,19 +34,19 @@ public class INGCollege implements ActionListener
         JPrerequisite = new JLabel("Prerequisite : ");
         
         JcourseID02 = new JLabel("Course ID : ");
-        JCourseLeader = new JLabel("Course Leader : ");
+        JcourseLeader = new JLabel("Course Leader : ");
         JLecturerName = new JLabel("Lecturer Name : ");
         JStartingDate = new JLabel("Starting Date : ");
         JCompletionDate = new JLabel("Completion Date : ");
         
         JcourseID03 = new JLabel("Course ID : ");
-        JCourseLeader01 = new JLabel("Course Leader : ");
+        JcourseLeader01 = new JLabel("Course Leader : ");
         JStartingDate01 = new JLabel("Starting Date : ");
         JCompletionDate01 = new JLabel("Completion Date : ");
         JInstructor = new JLabel("Instructor Name : ");       
         JExamDate = new JLabel("Exam Date : ");
         
-        JCourseID04 = new JLabel("Course ID :");
+        JcourseID04 = new JLabel("Course ID :");
         
         JcourseID00 = new JTextField();
         JcourseName00 = new JTextField();
@@ -68,13 +67,13 @@ public class INGCollege implements ActionListener
         JCompletionDate00 = new JTextField();
         
         JcourseID300 = new JTextField();
-        Jinstructor300 = new JTextField();
+        JInstructor00 = new JTextField();
         JcourseLeader100 = new JTextField();
         JStartingDate100 = new JTextField();
         JCompletionDate100 = new JTextField();
         JExamDate00 = new JTextField();
         
-        JCourseID400 = new JTextField();
+        JcourseID400 = new JTextField();
 
          f.setVisible(true);
         p1.setVisible(true);
@@ -104,13 +103,13 @@ public class INGCollege implements ActionListener
         Title00.setFont(new Font("Arial",Font.BOLD,30));
         Title01.setFont(new Font("Arial",Font.BOLD,30));
 
-        Title1.setBounds(350,20,450,50);
-        JCourseID.setBounds(40,150,120,30);
-        JCourseName.setBounds(470,150,120,30);
-        JDuration.setBounds(40,150,120,30);
+        Title01.setBounds(350,20,450,50);
+        JcourseID.setBounds(40,150,120,30);
+        JcourseName.setBounds(470,150,120,30);
+        JcourseDuration.setBounds(40,150,120,30);
         JLevel.setBounds(450,150,120,30);
-        JCredit.setBounds(40,200,120,30);
-        JNumberOfAssessments.setBounds(470,200,150,30);
+        JCredits.setBounds(40,200,120,30);
+        JNumberofassessments.setBounds(470,200,150,30);
         
         Title01.setBounds(350,20,450,50);
         JcourseID01.setBounds(40,150,120,30);
@@ -158,7 +157,7 @@ public class INGCollege implements ActionListener
         JCompletionDate100.setBounds(160,350,180,30);
         JExamDate00.setBounds(600,350,180,30);
         
-        JCourseID400.setBounds(150,450,180,30);
+        JcourseID400.setBounds(150,450,180,30);
 
         Add.setBounds(600,250,120,30);
         Register.setBounds(600,460,120,30);
@@ -166,66 +165,66 @@ public class INGCollege implements ActionListener
         Clear.setBounds(380,510,120,30);
         NextPage.setBounds(540,510,120,30);
 
-        Add01.setBounds(600,200,120,30);
-        Register01.setBounds(600,410,120,30);
+        Add1.setBounds(600,200,120,30);
+        Register1.setBounds(600,410,120,30);
         Remove.setBounds(160,510,120,30);
-        Display01.setBounds(220,560,120,30);
-        Clear01.setBounds(380,560,120,30);
+        Display1.setBounds(220,560,120,30);
+        Clear1.setBounds(380,560,120,30);
         PreviousPage.setBounds(540,560,120,30);
         
-        p1.add(Title1);
-        p1.add(JCourseID);
-        p1.add(JCourseName);
-        p1.add(JDuration);
-        p1.add(JCourseID_);
-        p1.add(JCourseName_);
-        p1.add(JDuration_);
+        p1.add(Title00);
+        p1.add(JcourseID);
+        p1.add(JcourseName);
+        p1.add(JcourseDuration);
+        p1.add(JcourseID00);
+        p1.add(JcourseName00);
+        p1.add(JcourseDuration00);
         p1.add(Add);
-        p1.add(JCourseID2);
+        p1.add(JcourseID02);
         p1.add(JLecturerName);
-        p1.add(JCourseLeader);
+        p1.add(JcourseLeader);
         p1.add(JLevel);
-        p1.add(JCredit);
+        p1.add(JCredits);
         p1.add(JStartingDate);
         p1.add(JCompletionDate);
-        p1.add(JNumberOfAssessments);
-        p1.add(JCourseID2_);
-        p1.add(JLecturerName_);
-        p1.add(JCourseLeader_);
-        p1.add(JLevel_);
-        p1.add(JCredit_);
-        p1.add(JStartingDate_);
-        p1.add(JCompletionDate_);
-        p1.add(JNumberOfAssessments_);
+        p1.add(JNumberofassessments);
+        p1.add(JcourseID200);
+        p1.add(JLecturerName00);
+        p1.add(JcourseLeader00);
+        p1.add(JLevel00);
+        p1.add(JCredits00);
+        p1.add(JStartingDate00);
+        p1.add(JCompletionDate00);
+        p1.add(JNumberofassessments00);
         p1.add(Register);
         p1.add(Display);
         p1.add(Clear);
         p1.add(NextPage);
 
-        p2.add(Title2);
-        p2.add(JCourseID1);
-        p2.add(JCourseName1);
-        p2.add(JDuration1);
-        p2.add(JCourseID1_);
-        p2.add(JCourseName1_);
-        p2.add(JDuration1_);
+        p2.add(Title01);
+        p2.add(JcourseID01);
+        p2.add(JcourseName01);
+        p2.add(JcourseDuration01);
+        p2.add(JcourseID100);
+        p2.add(JcourseName100);
+        p2.add(JcourseDuration100);
         p2.add(Add1);
-        p2.add(JCourseID3);
-        p2.add(JInstructorName);
-        p2.add(JCourseLeader1);
-        p2.add(JStartingDate1);
-        p2.add(JCompletionDate1);
+        p2.add(JcourseID300);
+        p2.add(JInstructor);
+        p2.add(JcourseLeader01);
+        p2.add(JStartingDate01);
+        p2.add(JCompletionDate01);
         p2.add(JExamDate);
         p2.add(JPrerequisite);
-        p2.add(JCourseID4);
-        p2.add(JCourseID3_);
-        p2.add(JInstructorName_);
-        p2.add(JCourseLeader1_);
-        p2.add(JStartingDate1_);
-        p2.add(JCompletionDate1_);
-        p2.add(JExamDate_);
-        p2.add(JPrerequisite_);
-        p2.add(JCourseID4_);
+        p2.add(JcourseID04);
+        p2.add(JcourseID300);
+        p2.add(JInstructor00);
+        p2.add(JcourseLeader100);
+        p2.add(JStartingDate100);
+        p2.add(JCompletionDate100);
+        p2.add(JExamDate00);
+        p2.add(JPrerequisite00);
+        p2.add(JcourseID400);
         p2.add(Register1);
         p2.add(Display1);
         p2.add(Remove);
@@ -264,8 +263,8 @@ public class INGCollege implements ActionListener
                 courseName = JcourseName00.getText();
                 courseDuration = Integer.parseInt(JcourseDuration00.getText());
                 Level = JLevel00.getText();
-                Credits = JCredit00.getText();
-                Numberofassessments = Integer.parseInt(JNumberOfAssessments00.getText());
+                Credits = JCredits00.getText();
+                Numberofassessments = Integer.parseInt(JNumberofassessments00.getText());
                 boolean SameAC = false;
                 for(course C:AL)
                 {
@@ -301,7 +300,7 @@ public class INGCollege implements ActionListener
             {
                 courseID = JcourseID100.getText();
                 courseName = JcourseName100.getText();
-                courseDuration = Integer.parseInt(JDuration1_.getText());
+                courseDuration = Integer.parseInt(JcourseDuration100.getText());
                 Prerequisite = JPrerequisite00.getText();  
                 boolean SameNAC = false;
                 for(course C:AL)
@@ -313,8 +312,8 @@ public class INGCollege implements ActionListener
                 }
                 if(SameNAC == false)
                 {
-                    NAC = new Non_Academic_Course(courseID, courseName, courseDuration, Prerequisite);
-                    AL.add(NAC);
+                    NAC = new Non_Academic_Course(courseID, courseName, Prerequisite, courseDuration);
+                    AL.add(AL);
                     JOptionPane.showMessageDialog(f,"The Non-Academic Course is added.");
                 }
                 else
@@ -322,7 +321,7 @@ public class INGCollege implements ActionListener
                     JOptionPane.showMessageDialog(f,"The Non-Academic Course has already been added");
                 }
             }
-            catch(Exception A)
+            catch(Exception E)
             {
                 JOptionPane.showMessageDialog(f,"Please fill up the form properly !");
             }
@@ -336,14 +335,15 @@ public class INGCollege implements ActionListener
             String StartingDate = "";
             String CompletionDate = "";
             
+            try
             {
-                CourseID = JcourseID200.getText();
-                CourseLeader = JcourseID200.getText();
+                courseID = JcourseID200.getText();
+                courseLeader = JcourseID200.getText();
                 LecturerName = JLecturerName00.getText();
                 StartingDate = JStartingDate00.getText();
                 CompletionDate = JCompletionDate00.getText();
                 boolean SameAC1 = false;
-                for(Course CO:AL)
+                for(course CO:AL)
                  {
                     if(CO.getcourseID().equals(courseID))
                     {
@@ -388,7 +388,7 @@ public class INGCollege implements ActionListener
             String ExamDate = "";
             try
             {
-                courseID = JCourseID300getText();
+                courseID = JcourseID300.getText();
                 courseLeader = JcourseLeader00.getText();
                 Instructor = JLecturerName00.getText();
                 StartingDate = JStartingDate00.getText();
@@ -397,9 +397,9 @@ public class INGCollege implements ActionListener
                 boolean SameNAC01 = false;
                 for(course CO:AL)
                 {
-                    if(CO.getCourseID().equals(courseID))
+                    if(CO.getcourseID().equals(courseID))
                     {
-                        SameNAC1 = true;
+                        SameNAC01 = true;
                         if (CO instanceof Non_Academic_Course)
                         {
                             NAC = (Non_Academic_Course)CO;
@@ -409,7 +409,7 @@ public class INGCollege implements ActionListener
                             }
                             else
                             {
-                                NAC.Register(courseLeader, InstructorN, StartingDate, CompletionDate, ExamDate);
+                                NAC.Register(courseLeader, JInstructor, StartingDate, CompletionDate, ExamDate);
                                 JOptionPane.showMessageDialog(f,"The non-academic course has been registered.");   
                             }
                         }
@@ -428,14 +428,14 @@ public class INGCollege implements ActionListener
         }
         else if (A.getSource()==Remove)
         {
-            String CourseID = JCourseID4_.getText();
+            String CourseID = JcourseID400.getText();
             try{
-                for(Course C:AL){
-                    if(C.getCourseID().equals(CourseID))
+                for(course C:AL){
+                    if(C.getcourseID().equals(CourseID))
                     {
-                        if(C instanceof NonAcademicCourse)
+                        if(C instanceof Non_Academic_Course)
                         {
-                            NAC=(NonAcademicCourse)C;
+                            NAC=(Non_Academic_Course)C;
                             if(NAC.getisRemoved()==false)
                             {
                                 NAC.Remove();
@@ -533,3 +533,29 @@ public class INGCollege implements ActionListener
         new INGCollege();
     }
 }
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
