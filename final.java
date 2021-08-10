@@ -6,9 +6,10 @@ public class INGCollege implements ActionListener
 {
     private JFrame f;
     private JPanel p1,p2;
-    private JLabel acadlabel,nonacadlabel,idlabel,coursenamelabel,durationlabel,instructorlabel,leaderlabel,levellabel,creditlabel,noalabel,nonidlabel,noncourselabel,nondurationlabel,nonprelabel,noninstructorlabel,nonleaderlabel,startdatelabel,comdatelabel,nonstartlabel,noncomlabel,nonexamlabel; 
-    private JTextField txtid,txtcourse,txtduration,txtnoa,txtinstructor,txtleader,txtlevel,txtcredit,txtnonid,txtnoncourse,txtnonduration,txtnonpre,txtnoninstructor,txtnonleader,txtstartdate,txtcomdate,txtnonstartdate,txtnoncomdate,txtnonexamdate;
-    private JButton addbtn,regbtn,displaybtn,clearbtn,nonaddbtn,nonregbtn,nondisplaybtn,nonremovebtn,nonclearbtn,nextbtn,previousbtn;
+    private JLabel Title00, Title01, JcourseID, JcourseName, JcourseDuration, JLevel, JCredits, JNumberofassessments, JCourseID02, JLecturerName, JcourseLeader,JStartingDate, JCompletionDate, JcourseID01, JcourseName01, JcourseDuration01, JPrerequisite, JcourseID03, JInstructor, JcourseLeader01, JStartingDate01, JCompletionDate01, JExamDate, JcourseID04;
+    private JTextField JcourseID00, JcourseName00, JcourseDuration00, JcourseID200, JLecturerName00, JcourseLeader00, JLevel00, JCredits00, JStartingDate00, JCompletionDate00, JNumberofassessments00, JcourseID100, JcourseName100, JcourseDuration100, JPrerequisite00, JcourseID300, JInstructor00, JcourseLeader100, JStartingDate100, JCompletionDate100, JExamDate00, JCourseID400;
+    private JButton Add, Register, Display, Clear, NextPage, Add1, Register1, Display1, Clear1, Remove,PreviousPage;
+
     private ArrayList<course>al=new ArrayList();
     private Academic_Course objAC;
     private Non_Academic_Course objNAC;
